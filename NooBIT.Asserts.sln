@@ -11,7 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{EC83A61F-9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NooBIT.Asserts.Tests", "test\NooBIT.Asserts.Tests\NooBIT.Asserts.Tests.csproj", "{9C266156-8AE5-4698-A8B1-6943B42B60A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NooBIT.Asserts.Xunit", "src\NooBIT.Asserts.Xunit\NooBIT.Asserts.Xunit.csproj", "{7647E61A-C88B-45B8-844B-4F1E4097A9D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NooBIT.Asserts.Xunit", "src\NooBIT.Asserts.Xunit\NooBIT.Asserts.Xunit.csproj", "{7647E61A-C88B-45B8-844B-4F1E4097A9D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{30E80A4B-FB67-4D6B-86CB-4F3E3A6BDDB0}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
