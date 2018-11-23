@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using Xunit.Sdk;
 
 namespace NooBIT.Asserts.Tests
 {
@@ -7,9 +8,16 @@ namespace NooBIT.Asserts.Tests
         [Fact]
         public void Foo()
         {
-            var foo = "foo";
-            foo.Should().Not.Be.Equal("bar");
-            foo.Should().Be.Equal("foo");
+            "foo".Should().Be.And.Be.And.Be.And
+                .Not.Be.Equal("bar")
+                .And.Be.Equal("foo");
+
+            Assert.ThrowsAny<XunitException>(() => "foo".Should().Not.Be.Equal("foo"));
+
+            0.1d.Should()
+                .Not.Be.Equal(0.0d)
+                .And.Not.Be.Negative()
+                .And.Be.Positive();
         }
     }
 }

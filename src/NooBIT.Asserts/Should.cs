@@ -4,14 +4,10 @@ namespace NooBIT.Asserts
 {
     public class Should<T> : IShould<T>
     {
-        internal readonly T _value;
-        private readonly IAssertProvider _provider;
-        internal bool _negate;
-
         public Should(T value, IAssertProvider provider)
         {
-            _value = value;
-            _provider = provider ?? throw new ArgumentNullException(nameof(provider));
+            Value = value;
+            Provider = provider ?? throw new ArgumentNullException(nameof(provider));
         }
 
         public IBe<T> Be => new Be<T>(this);
@@ -20,27 +16,29 @@ namespace NooBIT.Asserts
         {
             get
             {
-                _negate = !_negate;
+                Negate = !Negate;
                 return this;
             }
         }
 
-        public T Value => _value;
+        public IAssertProvider Provider { get; }
 
-        public bool Negate => _negate;
+        public T Value { get; }
 
-        public T Apply(Action<T, IAssertProvider> positive, Action<T, IAssertProvider> negative)
+        public bool Negate { get; private set; }
+
+        public IBe<T> Apply(Action<T, IAssertProvider> positive, Action<T, IAssertProvider> negative)
         {
-            if (_negate)
-                negative(_value, _provider);
+            if (Negate)
+                negative(Value, Provider);
             else
-                positive(_value, _provider);
-            return _value;
+                positive(Value, Provider);
+            return Be;
         }
 
-        public object Apply(Func<T, IAssertProvider, object> positive, Func<T, IAssertProvider, object> negative) => _negate
-                ? negative(_value, _provider)
-                : positive(_value, _provider);
+        public object Apply(Func<T, IAssertProvider, object> positive, Func<T, IAssertProvider, object> negative) => Negate
+                ? negative(Value, Provider)
+                : positive(Value, Provider);
     }
 
     public interface IShould<T>
@@ -49,7 +47,8 @@ namespace NooBIT.Asserts
         IShould<T> Not { get; }
         T Value { get; }
         bool Negate { get; }
-        T Apply(Action<T, IAssertProvider> positive, Action<T, IAssertProvider> negative);
+        IAssertProvider Provider { get; }
+        IBe<T> Apply(Action<T, IAssertProvider> positive, Action<T, IAssertProvider> negative);
         object Apply(Func<T, IAssertProvider, object> positive, Func<T, IAssertProvider, object> negative);
     }
 }
