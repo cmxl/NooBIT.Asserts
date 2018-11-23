@@ -153,13 +153,13 @@ namespace NooBIT.Asserts.Xunit
                 Fail($"'{actual}' does contain '{expectedSubstring}'");
         }
 
-        public void DoesNotStartsWith(string expectedSubstring, string actual)
+        public void DoesNotStartWith(string expectedSubstring, string actual)
         {
             if (expectedSubstring != null && actual != null && actual.StartsWith(expectedSubstring))
                 Fail($"'{actual}' does start with '{expectedSubstring}'");
         }
 
-        public void DoesNotEndsWith(string expectedSubstring, string actual)
+        public void DoesNotEndWith(string expectedSubstring, string actual)
         {
             if (expectedSubstring != null && actual != null && actual.EndsWith(expectedSubstring))
                 Fail($"'{actual}' does end with '{expectedSubstring}'");

@@ -15,27 +15,15 @@ namespace NooBIT.Asserts
     {
         public static IBe<string> Contain(this IShould<string> should, string expectedSubstring) => should.Apply(
                 (t, a) => a.IsSubstringOf(t, expectedSubstring),
-                (t, a) =>
-                {
-                    if (t.Contains(expectedSubstring))
-                        a.Fail($"'{t}' contains '{expectedSubstring}' but was not expected to.");
-                });
+                (t, a) => a.IsNotSubstringOf(t, expectedSubstring));
 
         public static IBe<string> StartWith(this IShould<string> should, string expectedSubstring) => should.Apply(
                 (t, a) => a.StartsWith(expectedSubstring, t),
-                (t, a) =>
-                {
-                    if (!t.StartsWith(expectedSubstring))
-                        a.Fail($"Expected string '{t}' to not start with '{expectedSubstring}', but it did.");
-                });
+                (t, a) => a.DoesNotStartWith(expectedSubstring, t));
 
         public static IBe<string> EndWith(this IShould<string> should, string expectedSubstring) => should.Apply(
                 (t, a) => a.EndsWith(expectedSubstring, t),
-                (t, a) =>
-                {
-                    if (t.EndsWith(expectedSubstring))
-                        a.Fail($"Expected string '{t}' to not end with '{expectedSubstring}', but it did.");
-                });
+                (t, a) => a.DoesNotEndWith(expectedSubstring, t));
     }
 
     public static class ShouldDoubleExtensions

@@ -8,6 +8,8 @@ namespace NooBIT.Asserts
         void AssignableFrom<T>(T target, Type expectedType);
         void Contains<T>(T expected, IEnumerable<T> enumerable);
         void DoesNotContain<T>(T expected, IEnumerable<T> enumerable);
+        void DoesNotEndWith(string expectedSubstring, string actual);
+        void DoesNotStartWith(string expectedSubstring, string actual);
         void EndsWith(string expectedSubstring, string actual);
         void Equal(DateTime expected, DateTime actual, DatePrecision precision);
         void Equal(DateTime expected, DateTime actual, TimeSpan precision);
@@ -26,6 +28,7 @@ namespace NooBIT.Asserts
         void InRange<T>(T actual, T low, T high) where T : IComparable;
         void InRange<T>(T actual, T low, T high, IComparer<T> comparer);
         void InstanceOfType(object actual, Type expectedType);
+        void IsNotSubstringOf(string actual, string expectedSubstring);
         void IsSubstringOf(string actual, string expectedSubstring);
         void LessThan(double left, double right);
         void LessThan<T>(T left, T right);
