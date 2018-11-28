@@ -61,15 +61,87 @@ namespace NooBIT.Asserts
                 (t, a) => a.NotEqual(DateTime.Today, t.Date));
     }
 
-    public static class BeDoubleExtensions
+    public static class BeNumberExtensions
     {
+        public static IBe<decimal> Positive(this IBe<decimal> be) => be.Should.Apply(
+                (t, a) => a.GreaterThan(t, 0),
+                (t, a) => a.LessThanOrEqual(t, 0));
+
+        public static IBe<decimal> Negative(this IBe<decimal> be) => be.Should.Apply(
+                (t, a) => a.LessThan(t, 0),
+                (t, a) => a.GreaterThanOrEqual(t, 0));
+
+        public static IBe<float> Positive(this IBe<float> be) => be.Should.Apply(
+                (t, a) => a.GreaterThan(t, 0),
+                (t, a) => a.LessThanOrEqual(t, 0));
+
+        public static IBe<float> Negative(this IBe<float> be) => be.Should.Apply(
+                (t, a) => a.LessThan(t, 0),
+                (t, a) => a.GreaterThanOrEqual(t, 0));
+
         public static IBe<double> Positive(this IBe<double> be) => be.Should.Apply(
                 (t, a) => a.GreaterThan(t, 0),
-                (t, a) => a.LessThan(t, 0));
+                (t, a) => a.LessThanOrEqual(t, 0));
 
         public static IBe<double> Negative(this IBe<double> be) => be.Should.Apply(
                 (t, a) => a.LessThan(t, 0),
-                (t, a) => a.GreaterThan(t, 0));
+                (t, a) => a.GreaterThanOrEqual(t, 0));
+
+        public static IBe<short> Positive(this IBe<short> be) => be.Should.Apply(
+                (t, a) => a.GreaterThan(t, 0),
+                (t, a) => a.LessThanOrEqual(t, 0));
+
+        public static IBe<short> Negative(this IBe<short> be) => be.Should.Apply(
+                (t, a) => a.LessThan(t, 0),
+                (t, a) => a.GreaterThanOrEqual(t, 0));
+
+        public static IBe<int> Positive(this IBe<int> be) => be.Should.Apply(
+                (t, a) => a.GreaterThan(t, 0),
+                (t, a) => a.LessThanOrEqual(t, 0));
+
+        public static IBe<int> Negative(this IBe<int> be) => be.Should.Apply(
+                (t, a) => a.LessThan(t, 0),
+                (t, a) => a.GreaterThanOrEqual(t, 0));
+
+        public static IBe<long> Positive(this IBe<long> be) => be.Should.Apply(
+                (t, a) => a.GreaterThan(t, 0),
+                (t, a) => a.LessThanOrEqual(t, 0));
+
+        public static IBe<long> Negative(this IBe<long> be) => be.Should.Apply(
+                (t, a) => a.LessThan(t, 0),
+                (t, a) => a.GreaterThanOrEqual(t, 0));
+
+        public static IBe<byte> Positive(this IBe<byte> be) => be.Should.Apply(
+                (t, a) => a.GreaterThan(t, 0),
+                (t, a) => a.LessThanOrEqual(t, 0));
+
+        public static IBe<byte> Negative(this IBe<byte> be) => be.Should.Apply(
+               (t, a) => a.LessThan(t, 0),
+               (t, a) => a.GreaterThanOrEqual(t, 0));
+
+        public static IBe<ushort> Positive(this IBe<ushort> be) => be.Should.Apply(
+                (t, a) => a.GreaterThan(t, 0),
+                (t, a) => a.LessThanOrEqual(t, 0));
+
+        public static IBe<ushort> Negative(this IBe<ushort> be) => be.Should.Apply(
+               (t, a) => a.LessThan(t, 0),
+               (t, a) => a.GreaterThanOrEqual(t, 0));
+
+        public static IBe<uint> Positive(this IBe<uint> be) => be.Should.Apply(
+                (t, a) => a.GreaterThan(t, 0),
+                (t, a) => a.LessThanOrEqual(t, 0));
+
+        public static IBe<uint> Negative(this IBe<uint> be) => be.Should.Apply(
+               (t, a) => a.LessThan(t, 0),
+               (t, a) => a.GreaterThanOrEqual(t, 0));
+
+        public static IBe<ulong> Positive(this IBe<ulong> be) => be.Should.Apply(
+               (t, a) => a.GreaterThan(t, 0),
+               (t, a) => a.LessThanOrEqual(t, 0));
+
+        public static IBe<ulong> Negative(this IBe<ulong> be) => be.Should.Apply(
+               (t, a) => a.LessThan(t, 0),
+               (t, a) => a.GreaterThanOrEqual(t, 0));
     }
 
     public static class BeEnumerableExtensions
