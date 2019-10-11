@@ -5,8 +5,8 @@
     <Description>Fluent assertions wrapper BCL</Description>
     <Copyright>© 2018</Copyright>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/xNooBIT/NooBIT.Asserts.Xunit</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/xNooBIT/NooBIT.Asserts.Xunit</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/cmxl/NooBIT.Asserts</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/cmxl/NooBIT.Asserts</RepositoryUrl>
     <PackageTags>assert, fluent, netstandard, dotnet</PackageTags>
     <Company>NooBIT</Company>
     <Authors>Tobias Haimerl (cmxl)</Authors>
