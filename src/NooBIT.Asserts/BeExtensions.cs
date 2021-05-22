@@ -52,6 +52,14 @@ namespace NooBIT.Asserts
         public static IBe<ICollection> Empty(this IBe<ICollection> be) => be.Should.Apply(
                 (t, a) => a.Equal(0, t.Count),
                 (t, a) => a.NotEqual(0, t.Count));
+
+        public static IBe<ICollection<T>> Empty<T>(this IBe<ICollection<T>> be) => be.Should.Apply(
+                (t, a) => a.Equal(0, t.Count),
+                (t, a) => a.NotEqual(0, t.Count));
+
+        public static IBe<IReadOnlyCollection<T>> Empty<T>(this IBe<IReadOnlyCollection<T>> be) => be.Should.Apply(
+                (t, a) => a.Equal(0, t.Count),
+                (t, a) => a.NotEqual(0, t.Count));
     }
 
     public static class BeDateTimeExtensions

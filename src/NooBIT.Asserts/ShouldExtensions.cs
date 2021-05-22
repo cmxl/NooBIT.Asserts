@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NooBIT.Asserts
 {
@@ -24,6 +25,21 @@ namespace NooBIT.Asserts
         public static IBe<string> EndWith(this IShould<string> should, string expectedSubstring) => should.Apply(
                 (t, a) => a.EndsWith(expectedSubstring, t),
                 (t, a) => a.DoesNotEndWith(expectedSubstring, t));
+    }
+
+    public static class ShouldEnumerableExtensions
+    {
+        public static IBe<IEnumerable<T>> Contain<T>(this IShould<IEnumerable<T>> should, T expected) => should.Apply(
+            (t, a) => a.Contains(expected, t),
+            (t, a) => a.DoesNotContain(expected, t));
+
+        public static IBe<IReadOnlyCollection<T>> Contain<T>(this IShould<IReadOnlyCollection<T>> should, T expected) => should.Apply(
+            (t, a) => a.Contains(expected, t),
+            (t, a) => a.DoesNotContain(expected, t));
+
+        public static IBe<ICollection<T>> Contain<T>(this IShould<ICollection<T>> should, T expected) => should.Apply(
+            (t, a) => a.Contains(expected, t),
+            (t, a) => a.DoesNotContain(expected, t));
     }
 
     public static class ShouldDoubleExtensions
