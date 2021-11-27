@@ -3,15 +3,15 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Description>Fluent assertions wrapper for XUnit</Description>
-    <Copyright>© 2018</Copyright>
+    <Copyright>© 2021</Copyright>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/cmxl/NooBIT.Asserts</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cmxl/NooBIT.Asserts</RepositoryUrl>
     <PackageTags>xunit, assert, fluent, netstandard, dotnet</PackageTags>
     <Company>NooBIT</Company>
     <Authors>Tobias Haimerl (cmxl)</Authors>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <Version>1.0.0</Version>
+    <AssemblyVersion>6.0.0</AssemblyVersion>
+    <Version>6.0.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes />
     <LangVersion>latest</LangVersion>
